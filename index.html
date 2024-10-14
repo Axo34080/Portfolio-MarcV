@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Marc Villain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Marc Villain</h1>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="./CV.pdf" target="_blank" class="cv-button">Mon CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <div class="about-container">
+            <img src="images/MarcVillain.jpg_small" alt="Photo de Marc Villain" class="profile-photo">
+            <div class="about-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="game-container">
+                    <canvas id="snakeGame" width="400" height="400"></canvas>
+                </div>
+        <p>
+            Une petite partie ?
+        </p>
+        
+    </section>
+
+        <div class="marquee">
+        <p>Technologies maîtrisées : JavaScript | React | Node.js | HTML | CSS | Git | SQL | MongoDB | Exrpess.js | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Technologies maîtrisées : JavaScript | React | Node.js | HTML | CSS | Git | SQL | MongoDB | Exrpess.js | </p>
+        </div>
+
+
+    <section id="projects">
+        <h2>Mes Projets</h2>
+        <div class="project-container">
+            <button class="prev">←</button>
+        <div class="project">
+            <h3>Portfolio de Sophie Bluel</h3>
+            <p>Mon premier projet avec Javascrpit</p>
+            
+            <a href="https://axo34080.github.io/Portfolio-architecte-sophie-bluel/" target="_blank">
+                <img src="images/SophieBluel.png" alt="Portfolio-architecte-sophie-bluel" class="project-image">
+            </a>
+            <p>Description des problématiques + competences et techno utilisée</p>
+        </div>
+        
+        <div class="project">
+            <h3>Booki</h3>
+            <p>Site de résérvation d'hébérgement </p>
+            
+            <a href="https://axo34080.github.io/Page-d-accueil-Booki/" target="_blank">
+                <img src="images/Booki.png" alt="Page-d-accueil-Booki" class="project-image">
+            </a>
+            <p>Description des problématiques + competences et techno utilisée</p>
+        </div>
+        
+        <div class="project">
+            <h3>Site web NinaCarducci</h3>
+            <p>Site web d'une photographe</p>
+            
+            <a href="https://axo34080.github.io/Nina-Carducci-Dev/" target="_blank">
+                <img src="images/NinaCarducci.png" alt="Nina-Carducci-Dev" class="project-image">
+            </a>
+            <p>Description des problématiques + competences et techno utilisée</p>
+        </div>
+        <button class="next">→</button>
+        <!-- Ajoute d'autres projets ici -->
+        </div>
+    </section>
+    <section id="bande">
+        <div class="marquee2">
+            <p> Retrouvez plus d'informations sur mon GitHub ou ma page LinkedIn ou contactez moi ci dessous !  </p>
+            </div>
+    </section>
+    <section id="contact-form">
+        <h2>Contactez-moi</h2>
+        <form action="your-server-endpoint" method="post">
+            <div>
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div>
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+    </section>
+    
+    <footer>
+        <section id="contact">
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/in/marc-villain-616831330/" target="_blank" class="social-button linkedin">
+                    <img src="images/LinkedIn_icon.svg.webp" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://github.com/Axo34080" target="_blank" class="social-button github">
+                    <img src="images/icons8-github.svg" alt="GitHub" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-content>">
+            <p>&copy; 2024 Marc Villain. Tous droits réservés.</p>
+            </div>
+        </section>
+        
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="snake.js"></script>
+    <script src="projets.js"></script>
+    <script src="canva.js"></script>
+</body>
+</html>

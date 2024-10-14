@@ -1,0 +1,343 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux du body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le corps occupe toute la hauteur de la fenêtre */
+    font-family: 'Fira Code', monospace; /* Définit Fira Code comme police principale */
+    background-color: #1E2D3D; /* Couleur de fond légère */
+    color: #607B96;
+}
+
+
+/* Header */
+header {
+    background-color: #1E2D3D; /* Couleur sombre pour l'en-tête */
+    color: #607B96;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
+    position: relative; /* Position relative pour les éléments à l'intérieur */
+    z-index: 1000; /* S'assure que l'en-tête reste au-dessus d'autres éléments */
+}
+
+header h1 {
+    display: flex;
+    margin: 0;
+    font-size: xx-large;
+    font-weight: bold; /* Gras pour un meilleur contraste */
+}
+
+nav {
+    margin-top: 10px; /* Espace entre le titre et la navigation */
+}
+
+nav ul {
+    list-style-type: none; /* Enlève les puces de la liste */
+    padding: 0; /* Enlève le remplissage par défaut */
+    margin: 0; /* Enlève la marge par défaut */
+}
+
+nav ul li {
+    display: inline; /* Affiche les éléments de la liste en ligne */
+    margin-right: 20px; /* Espacement entre les éléments de la liste */
+}
+
+nav ul li a {
+    color: #607B96; /* Couleur des liens */
+    text-decoration: none; /* Enlève le soulignement des liens */
+    font-weight: bold; /* Gras pour un meilleur contraste */
+    padding: 10px 20px; /* Ajoute du padding pour créer l'effet bouton */
+    background-color: #3C4F61; /* Couleur de fond du bouton */
+    border-radius: 5px; /* Bordures arrondies pour un effet de bouton */
+    border: 1px solid #607B96; /* Ajoute une bordure pour bien délimiter le bouton */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour l'effet hover */
+}
+
+nav ul li a:hover {
+    background-color: #1f7b60; /* Change la couleur de fond au survol */
+    color: #1E2D3D; /* Change la couleur du texte au survol */
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #ffcc00; /* Ligne sous le lien actif */
+    padding-bottom: 4px; /* Espacement sous le texte */
+    background-color: #1f7b60; /* Active button background */
+    color: #1E2D3D; /* Active button text color */
+}
+
+
+/* Style de la section À propos */
+.about-container {
+    display: flex; /* Utilise Flexbox pour un alignement côte à côte */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    justify-content: center; /* Centre l'ensemble du contenu horizontalement */
+    margin: 40px 20px; /* Plus d'espace autour */
+    text-align: center; /* Centre le texte à l'intérieur du conteneur de texte */
+}
+
+/* Style de la photo de profil */
+.profile-photo {
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    margin-right: 100px; /* Espace entre la photo et le texte */
+    overflow: hidden; /* Assure que l'image ne déborde pas */
+    box-shadow: 10px 10px 10px  #1f7b60;
+
+}
+
+.profile-photo img {
+    width: 100%; /* S'assure que l'image s'adapte à la largeur du conteneur */
+    height: auto; /* Maintient le rapport d'aspect */
+}
+
+/* Style pour la section de texte */
+.about-text {
+    color: #607B96;
+    max-width: 1000px; /* Limite la largeur pour éviter l'étirement */
+    margin: 0; /* Enlève la marge par défaut */
+}
+
+#about h2 {
+    margin-bottom: 20px; /* Espace sous le titre */
+    margin-top: 20px; /* Espace au-dessus du titre */
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+
+}
+
+#about p {
+    margin-left: 2%;
+}
+
+/*Css du jeu snake*/
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+canvas {
+    width: 500px;
+    margin-left: 100px;
+    border: 2px solid #607B96; /* Bordure pour le canevas */
+    background-color: #1E2D3D; /* Couleur de fond */
+    display: block;
+    box-shadow: 10px 10px 10px  #1f7b60;
+}
+
+/* Styles pour le bandeau défilant */
+.marquee {
+    background-color:#1E2D3D;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 10px 0; /* Plus d'espace autour */
+}
+.marquee2 {
+    margin-top: 5%;
+    background-color:#1E2D3D;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 10px 0; /* Plus d'espace autour */
+}
+.marquee p {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+.marquee2 p {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+}
+
+
+/* Animation */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Style de la section Projets */
+.project {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition fluide pour opacité et transformation */
+    transform: scale(0.9);
+    display: none;
+    cursor: pointer; /* Indique qu'il s'agit d'un lien cliquable */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.project img {
+    width: 80%; /* Image prend toute la largeur du conteneur */
+    height: auto; /* Conserve le ratio d'aspect de l'image */
+    border-radius: 5px; /* Coins arrondis pour l'image */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.project.active {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+}
+
+.project:hover {
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol pour effet de soulèvement */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour la mise en évidence */
+    cursor: pointer; /* Changer le curseur au survol pour indiquer que c'est cliquable */
+}
+
+.project:active {
+    transform: scale(0.98); /* Légère réduction lors du clic pour un effet de feedback */
+    transition: transform 0.1s ease; /* Animation rapide pour l'effet de clic */
+}
+
+.project p {
+    text-align: center;
+    margin-bottom: 1%; 
+    font-size: xx-large;
+}
+
+.project h3 {
+    text-align: center;
+}
+
+#projects h2 {
+    margin-top: 5%;
+    margin-bottom: 2.5%; /* Espace sous le titre */
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+
+}
+
+/* Style pour le formulaire de contact */
+#contact-form {
+    width: 50%;
+    margin: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond clair pour le formulaire */
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px  #1f7b60;
+}
+
+#contact-form h2 {
+    margin-bottom: 20px; /* Espace sous le titre */
+}
+
+#contact-form div {
+    margin-bottom: 15px; /* Espacement entre les éléments du formulaire */
+}
+
+#contact-form label {
+    display: block; /* Les étiquettes sur une nouvelle ligne */
+    margin-bottom: 5px; /* Espace sous l'étiquette */
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%; /* Largeur complète */
+    padding: 10px; /* Espace intérieur */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+#contact-form button {
+    padding: 10px 15px; /* Espace intérieur du bouton */
+    background-color: #1E2D3D; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+}
+
+#contact-form button:hover {
+    background-color: #2a4a5e; /* Couleur de fond au survol */
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Couleur sombre pour le footer */
+    color: #fff; /* Couleur du texte clair */
+    padding: 20px 0; /* Plus d'espace en haut et en bas */
+    text-align: center; /* Centre le texte */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Ombre portée en haut */
+    margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+.footer-content {
+    max-width: 800px; /* Largeur maximale pour le contenu */
+    margin: 0 auto; /* Centre le contenu dans le footer */
+}
+
+/* Liens */
+footer a {
+    color: #1f7b60; /* Couleur des liens dans le footer */
+    text-decoration: none; /* Enlève le soulignement par défaut */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Souligne les liens au survol */
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Espace en bas des boutons */
+}
+
+.social-button {
+    display: flex; /* Utiliser flexbox pour centrer l'icône */
+    align-items: center; /* Centrer verticalement l'icône */
+    justify-content: center; /* Centrer horizontalement l'icône */
+    width: 40px; /* Largeur du bouton */
+    height: 40px; /* Hauteur du bouton */
+    margin: 0 10px; /* Espace entre les boutons */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.social-icon {
+    width: 100%; /* Prendre toute la largeur du bouton */
+    height: auto; /* Conserver le ratio d'aspect de l'image */
+}
+
+.social-button:hover {
+    background-color: #1f7b60; /* Couleur au survol */
+}
