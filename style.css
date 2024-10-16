@@ -246,19 +246,21 @@ button.next {
 
 /* Style pour le formulaire de contact */
 #contact-form {
-    width: 50%;
-    margin: 20px;
+    width: 80%; /* Réduire la largeur pour éviter la déformation */
+    max-width: 600px; /* Limiter la taille maximale */
+    margin: 0 auto; /* Centrer le formulaire horizontalement */
+    padding: 20px;
+    background-color: #fff; /* Fond blanc pour le formulaire */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
     margin-top: 5%;
     margin-bottom: 5%;
-    margin-left: 25%;
-    padding: 20px;
-    background-color: #f9f9f9; /* Fond clair pour le formulaire */
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px  #1f7b60;
 }
 
 #contact-form h2 {
     margin-bottom: 20px; /* Espace sous le titre */
+    text-align: center; /* Centrer le titre */
+    color: #1E2D3D; /* Couleur du titre */
 }
 
 #contact-form div {
@@ -268,6 +270,8 @@ button.next {
 #contact-form label {
     display: block; /* Les étiquettes sur une nouvelle ligne */
     margin-bottom: 5px; /* Espace sous l'étiquette */
+    font-weight: bold; /* Gras pour les étiquettes */
+    color: #333; /* Couleur des labels */
 }
 
 #contact-form input,
@@ -276,20 +280,40 @@ button.next {
     padding: 10px; /* Espace intérieur */
     border: 1px solid #ccc; /* Bordure légère */
     border-radius: 5px; /* Coins arrondis */
+    box-sizing: border-box; /* Inclure padding dans la largeur totale */
+    font-size: 16px; /* Taille de police plus grande */
+    font-family: Arial, sans-serif; /* Police claire et lisible */
+    background-color: #fff; /* Fond blanc pour les champs */
+    transition: border 0.3s ease; /* Transition pour l’effet de focus */
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #1f7b60; /* Bordure verte au focus */
+    outline: none; /* Enlever le contour par défaut */
+}
+
+#contact-form textarea {
+    resize: vertical; /* Autoriser le redimensionnement vertical seulement */
+    min-height: 150px; /* Hauteur minimale pour la zone de texte */
 }
 
 #contact-form button {
-    padding: 10px 15px; /* Espace intérieur du bouton */
-    background-color: #1E2D3D; /* Couleur de fond */
+    width: 100%; /* Le bouton occupe toute la largeur */
+    padding: 12px 20px; /* Espace intérieur plus grand */
+    background-color: #1f7b60; /* Couleur de fond du bouton */
     color: #fff; /* Couleur du texte */
     border: none; /* Pas de bordure */
     border-radius: 5px; /* Coins arrondis */
     cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+    font-size: 16px; /* Taille de police plus grande */
+    transition: background-color 0.3s ease; /* Transition pour le hover */
 }
 
 #contact-form button:hover {
-    background-color: #2a4a5e; /* Couleur de fond au survol */
+    background-color: #146f4a; /* Couleur de fond au survol */
 }
+
 
 /* Footer */
 footer {
@@ -340,4 +364,80 @@ footer a:hover {
 
 .social-button:hover {
     background-color: #1f7b60; /* Couleur au survol */
+}
+
+
+/* Styles généraux pour les écrans de bureau */
+@media (max-width: 768px) {
+    /* Styles pour les ordinateurs portables */
+    body {
+        font-size: 16px; /* Ajuste la taille de la police */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Ajuste la taille du titre */
+    }
+
+    .about-container {
+        flex-direction: column; /* Change la direction pour un affichage vertical */
+        align-items: center; /* Centre les éléments */
+    }
+
+    .profile-photo {
+        margin-right: 0; /* Enlève la marge à droite */
+        margin-bottom: 20px; /* Ajoute de l'espace en bas */
+        object-fit: cover; /* Couvre le conteneur sans écrasement */
+    }
+
+    .game-container {
+        width: 100%; /* S'assure que le conteneur de jeu utilise 100% de la largeur */
+        margin: 0; /* Enlève toute marge */
+    }
+
+    .project img {
+        width: 100%; /* Les images des projets prennent 100% de la largeur */
+    }
+
+    #contact-form {
+        width: 90%; /* Ajuste la largeur du formulaire */
+    }
+
+    footer {
+        font-size: 14px; /* Ajuste la taille de la police du footer */
+    }
+}
+
+/* Styles pour les écrans mobiles */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Taille de police plus petite pour mobile */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Réduit la taille du titre */
+    }
+
+    nav ul li {
+        display: block; /* Affiche les liens de navigation sur des lignes séparées */
+        margin: 10px 0; /* Espace entre les éléments de navigation */
+    }
+
+    .about-container {
+        margin: 20px 10px; /* Réduit la marge autour du conteneur */
+    }
+
+    .profile-photo {
+        width: 100%; /* La photo de profil prend toute la largeur */
+        height: auto; /* Maintient le rapport d'aspect */
+        margin-bottom: 20px; /* Ajoute de l'espace en bas */
+        object-fit: cover; /* Couvre le conteneur sans écrasement */
+    }
+
+    #contact-form {
+        width: 95%; /* Ajuste encore la largeur du formulaire */
+    }
+
+    .social-buttons {
+        flex-direction: column; /* Aligne les boutons sociaux verticalement */
+    }
 }

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <nav>
             <h1>Marc Villain</h1>
@@ -26,7 +25,11 @@
         <div class="about-container">
             <img src="images/MarcVillain.jpg_small" alt="Photo de Marc Villain" class="profile-photo">
             <div class="about-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Je m'appelle Marc Villain, développeur JavaScript passionné, spécialisé en React. Né le 30 décembre 1995, j'ai découvert ma passion pour le développement web début 2023 grâce à une formation OpenClassrooms. Depuis, je m'épanouis dans l'univers du code et j'adore créer des applications web modernes et performantes.
+
+                    <br><br><br>En dehors du développement, je suis un grand amateur de sport, notamment de musculation, une discipline qui m'apprend la persévérance et la rigueur, des qualités que je retrouve aussi dans le code. Je suis également passionné de jeux vidéo et de cinéma, des univers créatifs qui me permettent de m'évader et d'explorer de nouvelles idées.
+                    
+                    <br><br><br>Si vous cherchez un développeur motivé, curieux et passionné, n'hésitez pas à me contacter !</p>
                 </div>
                 <div class="game-container">
                     <canvas id="snakeGame" width="400" height="400"></canvas>
@@ -51,9 +54,13 @@
             <p>Mon premier projet avec Javascrpit</p>
             
             <a href="https://axo34080.github.io/Portfolio-architecte-sophie-bluel/" target="_blank">
-                <img src="images/SophieBluel.png" alt="Portfolio-architecte-sophie-bluel" class="project-image">
+                <img src="images/SophieBluel.webp" alt="Portfolio-architecte-sophie-bluel" class="project-image">
             </a>
-            <p>Description des problématiques + competences et techno utilisée</p>
+            <p>Problématiques rencontrées
+                <br>Adaptation du design pour garantir une interface responsive, optimisation des images et amélioration des temps de chargement.
+                
+                <br><br>Compétences et technologies
+                <br>HTML5, CSS3, JavaScript</p>
         </div>
         
         <div class="project">
@@ -61,9 +68,13 @@
             <p>Site de résérvation d'hébérgement </p>
             
             <a href="https://axo34080.github.io/Page-d-accueil-Booki/" target="_blank">
-                <img src="images/Booki.png" alt="Page-d-accueil-Booki" class="project-image">
+                <img src="images/Booki.webp" alt="Page-d-accueil-Booki" class="project-image">
             </a>
-            <p>Description des problématiques + competences et techno utilisée</p>
+            <p>Problématiques rencontrées
+                <br>Réalisation d'une mise en page responsive avec des éléments complexes, tout en optimisant la compatibilité entre navigateurs.
+                
+                <br><br>Compétences et technologies
+                <br>HTML5, CSS3</p>
         </div>
         
         <div class="project">
@@ -71,9 +82,13 @@
             <p>Site web d'une photographe</p>
             
             <a href="https://axo34080.github.io/Nina-Carducci-Dev/" target="_blank">
-                <img src="images/NinaCarducci.png" alt="Nina-Carducci-Dev" class="project-image">
+                <img src="images/NinaCarducci.webp" alt="Nina-Carducci-Dev" class="project-image">
             </a>
-            <p>Description des problématiques + competences et techno utilisée</p>
+            <p>Problématiques rencontrées
+                <br><br>Défis liés à l'intégration d'une interface responsive et à l'optimisation des performances, ainsi qu'à la compatibilité entre navigateurs.
+                
+                <br>Compétences et technologies
+                <br>HTML5, CSS3, JavaScript, React</p>
         </div>
         <button class="next">→</button>
         <!-- Ajoute d'autres projets ici -->
@@ -81,19 +96,19 @@
     </section>
     <section id="bande">
         <div class="marquee2">
-            <p> Retrouvez plus d'informations sur mon GitHub ou ma page LinkedIn ou contactez moi ci dessous !  </p>
+            <p> Retrouvez plus d'informations sur mon GitHub, ma page LinkedIn ou contactez moi ci dessous !  </p>
             </div>
     </section>
     <section id="contact-form">
         <h2>Contactez-moi</h2>
-        <form action="your-server-endpoint" method="post">
+        <form id="contact-form">
             <div>
                 <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="user_name" required>
             </div>
             <div>
                 <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="user_email" required>
             </div>
             <div>
                 <label for="message">Message :</label>
@@ -104,6 +119,24 @@
             </div>
         </form>
     </section>
+    
+    <!-- EmailJS script -->
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("service_hnunn2p");
+        })();
+    
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page lors de l'envoi
+    
+            emailjs.sendForm('service_hnunn2p', 'template_id', this)
+                .then(function() {
+                    alert('Message envoyé avec succès !');
+                }, function(error) {
+                    alert('Erreur lors de l\'envoi du message : ' + error);
+                });
+        });
+    </script>
     
     <footer>
         <section id="contact">
@@ -119,12 +152,10 @@
             <p>&copy; 2024 Marc Villain. Tous droits réservés.</p>
             </div>
         </section>
-        
     </footer>
-
     <script src="script.js"></script>
     <script src="snake.js"></script>
     <script src="projets.js"></script>
-    <script src="canva.js"></script>
+    <script src="particles.js"></script>
 </body>
 </html>
