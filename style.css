@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 /* Styles généraux du body */
@@ -13,6 +13,21 @@ body {
     font-family: 'Fira Code', monospace; /* Définit Fira Code comme police principale */
     background-color: #1E2D3D; /* Couleur de fond légère */
     color: #607B96;
+    background: linear-gradient(-45deg,#1E2D3D,#333,#1E2D3D,#333,#1E2D3D);     
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 
@@ -90,6 +105,8 @@ nav ul li a.active {
     margin-right: 100px; /* Espace entre la photo et le texte */
     overflow: hidden; /* Assure que l'image ne déborde pas */
     box-shadow: 10px 10px 10px  #1f7b60;
+    object-fit: cover; /* Couvre le conteneur sans écrasement */
+    min-width: 200px;
 
 }
 
@@ -130,14 +147,14 @@ canvas {
     width: 500px;
     margin-left: 100px;
     border: 2px solid #607B96; /* Bordure pour le canevas */
-    background-color: #1E2D3D; /* Couleur de fond */
+    background-color: transparent; /* Couleur de fond */
     display: block;
     box-shadow: 10px 10px 10px  #1f7b60;
 }
 
 /* Styles pour le bandeau défilant */
 .marquee {
-    background-color:#1E2D3D;
+    background-color:transparent;
     color: white;
     overflow: hidden;
     white-space: nowrap;
@@ -147,7 +164,7 @@ canvas {
 }
 .marquee2 {
     margin-top: 5%;
-    background-color:#1E2D3D;
+    background-color:transparent;
     color: white;
     overflow: hidden;
     white-space: nowrap;
@@ -188,7 +205,7 @@ canvas {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: white;
+    background-color: transparent;
 }
 
 .project:hover {
@@ -212,6 +229,13 @@ canvas {
     margin-bottom: 15px;
 }
 
+.section-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+}
 .project-content a {
     font-size: 1rem;
     color: #0077ff;
@@ -420,6 +444,8 @@ footer a:hover {
     }
 
     .profile-photo {
+        width: 100%; /* La photo de profil prend toute la largeur */
+        height: auto; /* Maintient le rapport d'aspect */
         margin-right: 0; /* Enlève la marge à droite */
         margin-bottom: 20px; /* Ajoute de l'espace en bas */
         object-fit: cover; /* Couvre le conteneur sans écrasement */
