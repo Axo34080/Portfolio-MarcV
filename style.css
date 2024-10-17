@@ -170,78 +170,114 @@ canvas {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
 }
+/*Css pour les projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
 
-/* Style de la section Projets */
 .project {
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition fluide pour opacité et transformation */
-    transform: scale(0.9);
-    display: none;
-    cursor: pointer; /* Indique qu'il s'agit d'un lien cliquable */
-}
-
-button.prev, button.next {
-    position: absolute;
-    top: 100%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-button.prev {
-    left: 10px;
-}
-
-button.next {
-    right: 10px;
-}
-
-.project img {
-    width: 80%; /* Image prend toute la largeur du conteneur */
-    height: auto; /* Conserve le ratio d'aspect de l'image */
-    border-radius: 5px; /* Coins arrondis pour l'image */
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.project.active {
-    opacity: 1;
-    transform: scale(1);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
 }
 
 .project:hover {
-    transform: scale(1.05); /* Agrandit légèrement au survol */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol pour effet de soulèvement */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour la mise en évidence */
-    cursor: pointer; /* Changer le curseur au survol pour indiquer que c'est cliquable */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-.project:active {
-    transform: scale(0.98); /* Légère réduction lors du clic pour un effet de feedback */
-    transition: transform 0.1s ease; /* Animation rapide pour l'effet de clic */
+.project-content {
+    padding: 20px;
+    text-align: left;
 }
 
-.project p {
-    text-align: center;
-    margin-bottom: 1%; 
-    font-size: xx-large;
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-.project h3 {
-    text-align: center;
+.project-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
 }
 
-#projects h2 {
-    margin-top: 5%;
-    margin-bottom: 2.5%; /* Espace sous le titre */
-    text-align: center;
-    font-weight: bold;
-    font-size: xx-large;
+.project-content a {
+    font-size: 1rem;
+    color: #0077ff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease;
+}
 
+.project-content a:hover {
+    border-bottom: 2px solid #0077ff;
+}
+
+.project-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.project:hover img {
+    transform: scale(1.05);
+}
+
+.project-icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px; /* Espace entre les icônes */
+    justify-content: left; /* Aligner les icônes à gauche */
+    position: relative;
+}
+
+.project-icons i {
+    font-size: 24px;
+    color: #1f7b60; /* Couleur des icônes */
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.project-icons i:hover {
+    color: #1e90ff; /* Changer la couleur au survol */
+}
+
+/* Style pour le tooltip */
+.project-icons i::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%; /* Positionner le tooltip au-dessus de l'icône */
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%); /* Ajuster pour le centrer */
+    background-color: rgba(0, 0, 0, 0.75); /* Fond sombre avec transparence */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px; /* Coins arrondis */
+    white-space: nowrap; /* Empêcher le texte de se plier */
+    opacity: 0; /* Invisible par défaut */
+    visibility: hidden; /* Cache le tooltip */
+    transition: opacity 0.3s ease; /* Transition fluide */
+}
+
+.project-icons i:hover::after {
+    opacity: 1; /* Rendre visible au survol */
+    visibility: visible; /* Afficher le tooltip */
 }
 
 /* Style pour le formulaire de contact */
