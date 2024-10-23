@@ -3,6 +3,7 @@ const canvas = document.getElementById('snakeGame');
 const ctx = canvas.getContext('2d');
 const box = 20; // Taille des carrés
 let snake, food, score, d, game; // Déclare les variables utilisées
+let speed = 150; // Vitesse du jeu
 
 // 2. Fonctions globales
 
@@ -34,10 +35,11 @@ function resetGame() {
     };
     score = 0;
     d = null; // Pas de direction au départ
+    speed = 150; // reinitialise la vitesse
 
     // Redémarre le jeu
     clearInterval(game);
-    game = setInterval(draw, 100);
+    game = setInterval(draw, speed);
 }
 
 // Fonction principale pour dessiner le jeu
@@ -70,6 +72,10 @@ function draw() {
             x: Math.floor(Math.random() * 19 + 1) * box,
             y: Math.floor(Math.random() * 19 + 1) * box
         };
+        // augmenter la vitesse
+        speed = Math.max(30, speed - 5); // Réduire l'intervalle de 10ms, minimum 50ms
+        clearInterval(game);
+        game = setInterval(draw, speed);
     } else {
         snake.pop();
     }
